@@ -14,6 +14,11 @@ let sum = 0;
 // chiedo all'utente di inserire un numero di 4 cifre
 let numberPrompt = Number(prompt("Inserisci un numero intero di 4 cifre"));
 
+// controllo che il valore inserito sia valido
+while (numberPrompt < 1000 || numberPrompt > 9999 || isNaN(numberPrompt) || !Number.isInteger(numberPrompt)) {
+    numberPrompt = Number(prompt("Hai inserito un valore non valido. Inserisci un numero intero di 4 cifre"));
+}
+
 // questa variabile la uso per tenere il valore di numberPrompt salvato in modo da mandarlo in output alla fine
 let numberTemp = numberPrompt;
 

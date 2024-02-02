@@ -10,7 +10,12 @@ const introTextElement = document.querySelector("#intro-text");
 const outputCubeElement = document.querySelector("#output-cube");
 
 // chiedo all'utente di inserire un numero intero
-const number = Number(prompt("Inserisci un numero intero"));
+let number = Number(prompt("Inserisci un numero intero"));
+
+// controllo che il valore inserito sia valido
+while (isNaN(number) || !Number.isInteger(number)) {
+    number = Number(prompt("Hai inserito un valore non valido. Inserisci un numero intero"));
+}
 
 // stampo l'intro
 introTextElement.innerHTML += `Il cubo dei numeri da 1 a ${number} sono:`;

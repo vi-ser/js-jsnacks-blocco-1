@@ -14,10 +14,17 @@ const outputArrayElement = document.querySelector("#output-array");
 // salvo l'elemento di output del DOM
 const outputSumElement = document.querySelector("#output-sum");
 
+let number;
+
 for (let i = 0; i < 6; i++) {
 
     // chiedo all'utente di inserire un numero
-    const number = Number(prompt("Inserisci un numero intero"));
+    number = Number(prompt("Inserisci un numero intero"));
+
+    // controllo che il valore inserito sia un numero intero
+    while (isNaN(number) || !Number.isInteger(number)) {
+        number = Number(prompt("Il valore inserito non è valido. Inserisci un numero intero"));
+    }
 
     // controllo che il numero sia dispari
     if (number % 2 != 0) {
